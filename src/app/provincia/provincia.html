@@ -1,0 +1,21 @@
+<div class="select-provincia">
+    <h1>Selector de Provincias</h1>
+    <p>Selecciona una provincia para ver su poblacion</p>
+
+    @if (ListaProvincias().length > 0) {
+        <select (change) = "onProvincias($event)">
+            <option value="">-- Selecciona una Provincia --</option>
+
+            @for (i of ListaProvincias(); track i.code) {
+                <option [value]="i.code">
+                    {{ i.label }}
+                </option>
+            }
+        </select>
+    } @else {
+        <p>Cargando Provincias...</p>
+    }
+
+    
+
+</div>

@@ -1,0 +1,19 @@
+<div class="select-ccaa">
+    <h1>Selector de Comunidades Autónomas</h1>
+    <p>Selecciona una comunidad autónoma para ver sus provincias.</p>
+
+    @if (ListaComunidades().length > 0) {
+        <select (change) = "onComunidades($event)">
+            <option value="">-- Selecciona una Comunidad --</option>
+
+            @for (i of ListaComunidades(); track i.code) {
+                <option [value]="i.code">
+                    {{ i.label }}
+                </option>
+            }
+        </select>
+    }@else {
+        <p>Cargando Comunidades...</p>
+    }
+   
+</div>

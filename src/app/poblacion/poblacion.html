@@ -1,0 +1,18 @@
+<div class="select-poblacion">
+  <h1>Selector de Poblaciones</h1>
+  <p>Selecciona una población para ver su información.</p>
+
+  @if (ListaPoblaciones().length > 0) {
+    <select (change)="onPoblaciones($event)">
+      <option value="">-- Selecciona una Población --</option>
+
+      @for (i of ListaPoblaciones(); track i.code) {
+        <option [value]="i.code">{{ i.label }}</option>
+      }
+    </select>
+  } @else {
+    <p>Cargando Poblaciones...</p>
+  }
+
+  
+</div>
